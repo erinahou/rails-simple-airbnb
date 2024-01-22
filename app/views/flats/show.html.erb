@@ -11,3 +11,12 @@
 
 <h2>A bit more about this flat</h2>
 <p><%= @flat.description %></p>
+
+<h2>Reviews:</h2>
+<ul>
+  <% @flat.reviews.each do |review| %>
+    <li><%= review.content %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Leave a review", new_flat_review_path(@flat) %>
